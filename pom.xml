@@ -56,7 +56,7 @@
                 <configuration>
                     <systemProperties>
                         <browser.name>chrome</browser.name>
-                        <auth.url>https://mail.ru</auth.url>
+                        <base.url>https://mail.ru</base.url>
                     </systemProperties>
                 </configuration>
             </plugin>
@@ -64,6 +64,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>

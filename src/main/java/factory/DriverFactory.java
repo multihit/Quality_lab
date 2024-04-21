@@ -11,6 +11,7 @@ public class DriverFactory {
 
     private String browserName = System.getProperty("browser.name");
     private String[] arguments;
+
     public DriverFactory(String... arguments) {
         this.arguments = arguments;
     }
@@ -21,7 +22,7 @@ public class DriverFactory {
             case "chrome": {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments(arguments);
+                chromeOptions.addArguments("--start-maximized");
                 return new ChromeDriver(chromeOptions);
             }
         }
